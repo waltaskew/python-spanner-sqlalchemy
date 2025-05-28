@@ -93,6 +93,16 @@ To pass your custom client object directly to be be used, create engine as follo
         isolation_level="SERIALIZABLE"
     )
 
+To connect using a fine-grained access control database role, pass the
+`database_role` argument:
+
+.. code:: python
+
+    engine = create_engine(
+        "spanner+spanner:///projects/project-id/instances/instance-id/databases/database-id",
+        connect_args={'database_role': 'my-role'}
+    )
+
 Create a table
 ~~~~~~~~~~~~~~
 
